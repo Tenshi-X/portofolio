@@ -1,41 +1,34 @@
 import React from "react";
-import {
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-} from "react-icons/fa";
+import { FaReact, FaHtml5, FaPhp, FaPython, FaJava } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTailwindcss,
-  SiTypescript,
   SiFlutter,
-  SiDart,
-  SiFirebase,
   SiKotlin,
+  SiExpress,
+  SiMysql,
+  SiCplusplus,
 } from "react-icons/si";
 
-// Daftar keahlian
 const skills = [
-  { name: "React", icon: <FaReact className="h-12 w-12 text-blue-400" /> },
+  { name: "React", icon: <FaReact className="h-12 w-12 text-sky-400" /> },
   { name: "Next.js", icon: <SiNextdotjs className="h-12 w-12 text-white" /> },
   {
-    name: "TypeScript",
-    icon: <SiTypescript className="h-12 w-12 text-blue-500" />,
+    name: "Express.js",
+    icon: <SiExpress className="h-12 w-12 text-gray-300" />,
   },
   {
     name: "Tailwind CSS",
     icon: <SiTailwindcss className="h-12 w-12 text-teal-400" />,
   },
-  { name: "Node.js", icon: <FaNodeJs className="h-12 w-12 text-green-500" /> },
-  { name: "Flutter", icon: <SiFlutter className="h-12 w-12 text-blue-400" /> },
-  { name: "Kotlin", icon: <SiKotlin className="h-12 w-12 text-purple-500" /> },
-  {
-    name: "Firebase",
-    icon: <SiFirebase className="h-12 w-12 text-yellow-500" />,
-  },
-  { name: "Git", icon: <FaGitAlt className="h-12 w-12 text-red-500" /> },
+  { name: "Flutter", icon: <SiFlutter className="h-12 w-12 text-blue-500" /> },
+  { name: "Kotlin", icon: <SiKotlin className="h-12 w-12 text-purple-600" /> },
+  { name: "Python", icon: <FaPython className="h-12 w-12 text-yellow-400" /> },
+  { name: "PHP", icon: <FaPhp className="h-12 w-12 text-indigo-400" /> },
+  { name: "Java", icon: <FaJava className="h-12 w-12 text-red-500" /> },
+  { name: "C++", icon: <SiCplusplus className="h-12 w-12 text-blue-600" /> },
+  { name: "HTML5", icon: <FaHtml5 className="h-12 w-12 text-orange-500" /> },
+  { name: "MySQL", icon: <SiMysql className="h-12 w-12 text-blue-500" /> },
 ];
 
 const Skills = () => {

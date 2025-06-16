@@ -1,6 +1,14 @@
 import { projectsData } from "@/data/projects";
 import { notFound } from "next/navigation";
 import ProjectDetailClient from "./ProjectDetailClient";
+import type { Metadata } from "next";
+
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -8,12 +16,15 @@ export async function generateStaticParams() {
   }));
 }
 
-const ProjectDetailPage = async ({
-  params,
-}: {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) => {
+export function generateMetadata({ params }: ProjectPageProps): Metadata {
+  const project = projectsData.find((p) => p.slug === params.slug);
+  return {
+    title: project?.title || "Project Detail",
+    description: project?.description || "Detail proyek",
+  };
+}
+
+const ProjectDetailPage = async ({ params }: ProjectPageProps) => {
   const project = projectsData.find((p) => p.slug === params.slug);
 
   if (!project) {

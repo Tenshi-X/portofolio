@@ -1,16 +1,12 @@
-// src/app/projects/[slug]/ProjectDetailClient.tsx
+"use client";
 
-"use client"; // Komponen ini sekarang adalah Client Component
-
-import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import type { projectsData } from "@/data/projects";
 
-// Definisikan tipe untuk prop 'project' agar lebih aman
+// Definisikan tipe untuk prop 'project'
 type Project = (typeof projectsData)[0];
 
-// Komponen ini menerima data proyek melalui props
 const ProjectDetailClient = ({ project }: { project: Project }) => {
   return (
     <main className="min-h-screen bg-gray-900 text-white">
@@ -29,15 +25,14 @@ const ProjectDetailClient = ({ project }: { project: Project }) => {
           </h1>
 
           <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden my-8 shadow-lg shadow-cyan-500/20">
-            <Image
+            <img
               src={project.image}
               alt={`Gambar ${project.title}`}
-              layout="fill"
-              objectFit="cover"
               onError={(e) => {
                 e.currentTarget.src =
                   "https://placehold.co/1200x800/0f172a/9ca3af?text=Image+Not+Found";
               }}
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
 

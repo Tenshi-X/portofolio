@@ -11,11 +11,11 @@ export default function Home() {
       <Navbar />
       <div className="container mx-auto px-12 py-4">
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        {/* <About /> */}
+        {/* <Projects /> */}
+        {/* <Contact /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

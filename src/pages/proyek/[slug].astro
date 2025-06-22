@@ -1,0 +1,32 @@
+---
+// src/pages/proyek/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import { projects } from '../../data/projects';
+
+// Fungsi ini memberi tahu Astro halaman mana saja yang harus dibuat
+export async function getStaticPaths() {
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`Proyek: ${project.title}`}>
+    <div class="container project-detail">
+        <a href="/#proyek" class="back-link">&larr; Kembali ke Proyek</a>
+        <h1>{project.title}</h1>
+        <div class="tags">
+            {project.tags.map(tag => (
+                <span class="tag">{tag}</span>
+            ))}
+        </div>
+        <img src={project.image} alt={`Gambar ${project.title}`} class="detail-image" />
+
+        <article class="project-description">
+            <Fragment set:html={project.description} />
+        </article>
+    </div>
+</Layout>

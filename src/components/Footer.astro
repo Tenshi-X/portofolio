@@ -1,0 +1,19 @@
+---
+// src/components/Footer.astro
+const githubUser = "Tenshi-X";
+const discordUser = "tenshi_x";
+const currentYear = new Date().getFullYear();
+---
+<footer id="kontak" class="footer">
+    <div class="container">
+        <h2>Hubungi Saya</h2>
+        <p>Anda dapat menemukan saya di platform berikut:</p>
+        <div class="contact-links">
+            <a href={`https://github.com/${githubUser}`} target="_blank">GitHub: {githubUser}</a>
+            <span>Discord: {discordUser}</span>
+        </div>
+        <div class="copyright">
+            &copy; {currentYear} Tenshi-X. Dibuat dengan Astro.
+        </div>
+    </div>
+</footer>

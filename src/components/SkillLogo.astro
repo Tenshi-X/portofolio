@@ -1,0 +1,12 @@
+---
+// src/components/SkillLogo.astro
+interface Props {
+  name: string;
+  icon: string;
+}
+const { name, icon } = Astro.props;
+---
+<div class="skill-item">
+    <img src={`/logos/${icon}`} alt={`Logo ${name}`} loading="lazy" />
+    <p>{name}</p>
+</div>

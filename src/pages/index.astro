@@ -1,0 +1,54 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import SkillLogo from '../components/SkillLogo.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { skills } from '../data/skills';
+import { projects } from '../data/projects';
+
+const webProjects = projects.filter(p => p.category === 'Web');
+const mobileProjects = projects.filter(p => p.category === 'Mobile');
+---
+<Layout title="Portofolio | Tenshi-X">
+	<section class="hero">
+		<div class="container hero-content">
+			<div class="hero-text">
+				<h1>Halo, saya <span class="highlight">Tenshi-X</span></h1>
+				<p>Seorang pengembang perangkat lunak dengan fokus pada pembuatan aplikasi web dan mobile yang modern, intuitif, dan beperforma tinggi.</p>
+			</div>
+			<img src="/profile-pic.png" alt="Foto profil Tenshi-X" class="profile-pic">
+		</div>
+	</section>
+
+	<section id="keahlian" class="skills">
+		<div class="container">
+			<h2>Keahlian Teknologi</h2>
+			<div class="skill-grid">
+				{skills.map(skill => (
+					<SkillLogo name={skill.name} icon={skill.icon} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="proyek" class="projects">
+		<div class="container">
+			<h2>Showcase Proyek</h2>
+
+			<h3>Web</h3>
+			<div class="project-grid">
+				{webProjects.map(project => (
+					<ProjectCard project={project} />
+				))}
+			</div>
+
+			<h3 class="mobile-section-title">Mobile</h3>
+			<div class="project-grid">
+				{mobileProjects.map(project => (
+					<ProjectCard project={project} />
+				))}
+			</div>
+		</div>
+	</section>
+
+</Layout>

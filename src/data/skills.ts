@@ -1,23 +1,24 @@
-// src/data/skills.ts
-
 export const skills = [
+  // Desain
+  { name: "Figma", icon: "simple-icons:figma" },
+
   // Mobile
-  { name: "Flutter", icon: "flutter.svg" },
-  { name: "Kotlin", icon: "kotlin.svg" },
-  { name: "Java", icon: "java.svg" },
+  { name: "Flutter", icon: "simple-icons:flutter" },
+  { name: "Kotlin", icon: "simple-icons:kotlin" },
+  { name: "Java", icon: "fa-brands:java" },
 
   // Web Frontend
-  { name: "HTML", icon: "html5.svg" },
-  { name: "Tailwind CSS", icon: "tailwindcss.svg" },
-  { name: "React.js", icon: "react.svg" },
-  { name: "Next.js", icon: "nextjs.svg" },
+  { name: "HTML", icon: "simple-icons:html5" },
+  { name: "Tailwind CSS", icon: "simple-icons:tailwindcss" },
+  { name: "React", icon: "simple-icons:react" },
+  { name: "Next.js", icon: "simple-icons:nextdotjs" },
 
   // Web Backend
-  { name: "Express.js", icon: "express.svg" },
-  { name: "PHP", icon: "php.svg" },
-  { name: "Python", icon: "python.svg" },
+  { name: "Express.js", icon: "simple-icons:express" },
+  { name: "PHP", icon: "simple-icons:php" },
+  { name: "Python", icon: "simple-icons:python" },
 
   // Database & Lainnya
-  { name: "MySQL", icon: "mysql.svg" },
-  { name: "C++", icon: "cplusplus.svg" },
+  { name: "MySQL", icon: "simple-icons:mysql" },
+  { name: "C++", icon: "simple-icons:cplusplus" },
 ];

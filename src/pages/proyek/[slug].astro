@@ -12,21 +12,100 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 ---
 
-<Layout title={`Proyek: ${project.title}`}>
-  <section class="project-detail container">
-    <a href="/#proyek" class="back-link">&larr; Kembali ke Proyek</a>
-
-    <header>
-      <h1 class="project-title">{project.title}</h1>
-      <div class="tags">
-        {project.tags.map(tag => (
-          <span class="tag">{tag}</span>
-        ))}
+<Layout title={`${project.title} | Seva Giantama Farel`}>
+  <section class="project-detail">
+    <div class="container">
+      <div class="header-group reveal">
+        <a href="/#projects" class="btn btn-secondary back-btn">
+          <span style="margin-right: 0.5rem">←</span> Back to Work
+        </a>
+        
+        <h1 class="project-title">{project.title}</h1>
+        
+        <div class="tags">
+          {project.tags.map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
       </div>
-    </header>
 
-    <article class="project-description">
-      <Fragment set:html={project.description} />
-    </article>
+      <article class="project-content reveal delay-100">
+        <Fragment set:html={project.description} />
+      </article>
+    </div>
   </section>
 </Layout>
+
+<style>
+  .project-detail {
+    padding-top: 8rem;
+    min-height: 80vh;
+  }
+  
+  .header-group {
+    margin-bottom: 3rem;
+  }
+  
+  .back-btn {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+  }
+  
+  .project-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+  
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .tag {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-primary);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+  }
+  
+  /* Article Typography */
+  .project-content {
+    max-width: 80ch;
+    background: var(--bg-card); /* Optional: card background for content */
+    padding: 0; /* Or padding if card style used */
+    /* If keeping clean without card bg, remove background line */
+    background: transparent;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .project-content :global(h2) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+  
+  .project-content :global(p) {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+  }
+  
+  .project-content :global(ul) {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+  }
+  
+  .project-content :global(img) {
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid var(--border-light);
+  }
+</style>

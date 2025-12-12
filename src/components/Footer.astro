@@ -3,16 +3,13 @@
 const discordUser = "_tenshix";
 const currentYear = new Date().getFullYear();
 ---
-<footer id="kontak" class="footer">
+<footer class="footer">
     <div class="container">
-        <h2>Hubungi Saya</h2>
-        <p>Anda dapat menemukan saya di platform berikut:</p>
-        <div class="contact-links">
-            <a href={`https://github.com/Tenshi-X`} target="_blank">GitHub: Tenshi-X</a>
-            <span>Discord: {discordUser}</span>
-        </div>
-        <div class="copyright">
-            &copy; {currentYear} Tenshi-X. Dibuat dengan Astro.
+        <p>&copy; {currentYear} Seva Giantama Farel. All rights reserved.</p>
+        <div class="contact-links" style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="https://github.com/Tenshi-X" target="_blank" style="color: var(--text-muted);">GitHub</a>
+            <span style="margin: 0 0.5rem; color: var(--border-light);">|</span>
+            <span style="color: var(--text-muted);">Discord: {discordUser}</span>
         </div>
     </div>
 </footer>

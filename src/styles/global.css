@@ -195,3 +195,29 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
+
+/* Skills Grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Specific Component Styles that were missing */
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+  }
+}

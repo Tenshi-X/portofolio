@@ -121,7 +121,7 @@ body::before {
 
 /* Sections */
 section {
-  padding: 6rem 0;
+  padding: 3rem 0;
 }
 
 /* Header */
@@ -184,15 +184,19 @@ section {
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: start;
 }
 @media (min-width: 768px) {
-  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-2 { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem;
+  }
 }
 
-.grid-3 {
+.grid-3, .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -200,7 +204,8 @@ section {
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 1.5rem;
+  gap: 3rem;
+  justify-content: center;
 }
 
 /* Specific Component Styles that were missing */

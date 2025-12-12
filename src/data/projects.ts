@@ -18,7 +18,7 @@ export const projects = [
     slug: "matahati-edugame",
     category: "Web",
     title: "Matahati - Game Edukasi Hipertensi",
-    image: "/projects/placeholder.jpg",
+    image: "/projects/matahati.png",
     tags: ["Next.js", "Laravel"],
     description: `
         <p>Matahati adalah platform <i>"edugame"</i> (edukasi-game) interaktif yang bertujuan untuk meningkatkan kesadaran masyarakat mengenai bahaya dan pencegahan hipertensi. Melalui permainan kuis, cerita, dan simulasi, pengguna dapat belajar tentang gaya hidup sehat dengan cara yang menyenangkan dan tidak membosankan.</p>
@@ -53,7 +53,7 @@ export const projects = [
     slug: "bacalagi-book-scanner",
     category: "Mobile",
     title: "Bacalagi - Cek Harga Buku Bekas",
-    image: "/projects/placeholder.jpg",
+    image: "/projects/bacalagi.jpg",
     tags: ["Kotlin", "Machine Learning", "Computer Vision"],
     description: `
         <p>Aplikasi Android inovatif yang membantu pengguna untuk mengetahui estimasi harga pasar buku bekas mereka. Pengguna cukup memindai (scan) sampul depan buku menggunakan kamera ponsel.</p>
@@ -64,7 +64,7 @@ export const projects = [
     slug: "gotrash-iot-monitor",
     category: "Mobile",
     title: "goTrash - Monitoring Sampah IoT",
-    image: "/projects/placeholder.jpg",
+    image: "/projects/gotrash.png",
     tags: ["Kotlin", "IoT", "Firebase"],
     description: `
         <p>Solusi <i>Smart City</i> dalam bentuk aplikasi Android untuk memonitor tingkat keterisian tempat sampah secara efisien. Aplikasi ini terhubung dengan sensor jarak (ultrasonik) yang dipasang di tempat sampah melalui platform IoT.</p>

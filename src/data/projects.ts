@@ -7,7 +7,7 @@ export const projects = [
     category: "Web",
     title: "Supply Management (AHP Method)",
     // Ganti 'placeholder.jpg' dengan nama file gambar Anda
-    image: "/projects/placeholder.jpg",
+    image: "/projects/supply_management.webp",
     tags: ["Next.js", "Express.js", "AHP"],
     description: `
         <p>Sebuah sistem pendukung keputusan berbasis web yang dirancang untuk membantu perusahaan dalam proses pemilihan supplier secara objektif. Website ini mengimplementasikan metode <i>Analytic Hierarchy Process</i> (AHP) untuk menghitung dan memberi peringkat kepada supplier berdasarkan berbagai kriteria yang telah ditentukan, seperti harga, kualitas, dan waktu pengiriman.</p>
@@ -26,25 +26,18 @@ export const projects = [
       `,
   },
   {
-    slug: "simont-mart-pos",
+    slug: "larismanis-web",
     category: "Web",
-    title: "Simont Mart - Sistem Jual Beli & Stok",
+    title: "Larismanis",
     image: "/projects/placeholder.jpg",
-    tags: ["PHP", "MySQL", "Bootstrap"],
+    tags: ["Next.js", "Supabase"],
     description: `
-        <p>Aplikasi web untuk manajemen toko (Point of Sale) dan inventaris barang yang dibangun menggunakan PHP native. Sistem ini mencakup fitur-fitur esensial untuk usaha kecil dan menengah, seperti pencatatan transaksi penjualan, manajemen data produk, pelacakan stok barang secara real-time, dan pembuatan laporan penjualan sederhana.</p>
-        <p>Proyek ini dirancang untuk menjadi solusi yang ringan dan mudah digunakan bagi pemilik usaha.</p>
-      `,
-  },
-  {
-    slug: "ip-status-checker",
-    category: "Web",
-    title: "IP Status Checker",
-    image: "/projects/placeholder.jpg",
-    tags: ["PHP"],
-    description: `
-        <p>Sebuah utilitas jaringan sederhana berbasis web yang berfungsi untuk memeriksa status host (server atau perangkat lain) berdasarkan alamat IP-nya. Pengguna dapat memasukkan alamat IP, dan aplikasi akan melakukan ping untuk memverifikasi apakah host tersebut aktif (online) atau tidak aktif (offline).</p>
-        <p>Tools ini sangat berguna untuk administrator jaringan atau developer untuk melakukan diagnosis cepat.</p>
+        <p class="mb-2"><strong>Tools Sakti untuk UMKM naik kelas.</strong> Platform ini menyediakan alat pemasaran berbasis AI:</p>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Magic Content:</strong> Integrasi Gemini AI untuk generate caption dan style promosi instan hanya dengan upload foto produk.</li>
+            <li><strong>Campaign Planner:</strong> Jadwalkan konten promosi mingguan dengan mudah dan terstruktur.</li>
+            <li><strong>Consultant:</strong> Konsultasi bisnis dengan AI Chatbot yang memberikan solusi dan rekomendasi fitur yang tepat.</li>
+        </ul>
       `,
   },
 
@@ -72,14 +65,15 @@ export const projects = [
       `,
   },
   {
-    slug: "tokokita-ecommerce-app",
+    slug: "trenova-mobile",
     category: "Mobile",
-    title: "TokoKita - Aplikasi E-commerce",
-    image: "/projects/placeholder.jpg",
-    tags: ["Flutter", "Dart"],
+    title: "Trenova",
+    image: "/projects/trenova.png",
+    tags: ["React Native", "Supabase"],
     description: `
-        <p>Aplikasi mobile untuk platform e-commerce yang dirancang untuk memberikan pengalaman berbelanja yang mulus bagi pengguna. Fitur-fitur utama termasuk penjelajahan produk berdasarkan kategori, pencarian produk, sistem keranjang belanja, proses checkout, dan manajemen profil pengguna.</p>
-        <p>Dibangun menggunakan Flutter, aplikasi ini dapat berjalan di platform Android dan iOS dengan satu basis kode (single codebase), memastikan konsistensi tampilan dan fungsionalitas.</p>
+        <div class="inline-block bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded-full mb-2">On Going</div>
+        <p>Asisten trading crypto pribadi Anda. Aplikasi ini menggunakan <strong>AI Agent</strong> canggih untuk menganalisis grafik pasar secara real-time.</p>
+        <p>User cukup input target (misal: Buy @ 88k, TP @ 100k), dan AI akan memantau pergerakan harga (misal saat ini 90k) serta memberikan alert pintar momentum entry dan exit terbaik. Solusi bagi trader untuk profit maksimal tanpa harus memantau layar grafik seharian.</p>
       `,
   },
 ];

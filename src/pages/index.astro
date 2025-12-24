@@ -3,15 +3,12 @@
 import Layout from '../layouts/Layout.astro';
 import SkillLogo from '../components/SkillLogo.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { skillCategories } from '../data/skills';
+import { skills } from '../data/skills';
+
 /* Define types inline or import if available. For now, strict typing is good. */
 interface Skill {
     name: string;
     icon: string;
-}
-interface SkillCategory {
-    title: string;
-    skills: Skill[];
 }
 import { projects } from '../data/projects';
 
@@ -30,6 +27,12 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 					A data-driven <strong>Software Engineer</strong> specializing in building exceptional digital experiences. 
 					Currently focused on building accessible, human-centered products.
 				</p>
+                <p style="margin-top: 1rem;">
+                    I am a passionate developer with a knack for solving complex problems. 
+					My journey in tech has been driven by a curiosity to understand how things work 
+					and a desire to create tools that make life easier.
+                    I specialize in <strong>Full Stack Development</strong>, with deep expertise in features implementation, performance optimization, and scalable backend architecture.
+                </p>
 				<div class="cta-group">
 					<a href="#projects" class="btn btn-primary">View Work</a>
 					<a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -42,142 +45,16 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 		</div>
 	</section>
 
-	<!-- About Section -->
-	<section id="about" class="about">
-		<div class="container">
-			<h2 class="section-title reveal">About <span class="text-gradient">Me</span></h2>
-			<div class="grid-2 reveal delay-100">
-				<div class="about-text">
-					<p>
-						I am a passionate developer with a knack for solving complex problems. 
-						My journey in tech has been driven by a curiosity to understand how things work 
-						and a desire to create tools that make life easier.
-					</p>
-					<p>
-						I specialize in <strong>Full Stack Development</strong>, with deep expertise in 
-						layout engineering, performance optimization, and scalable backend architecture.
-					</p>
-				</div>
-				<div class="about-stats">
-					<div class="stat-item">
-						<span class="stat-number text-gradient">3+</span>
-						<span class="stat-label">Years Experience</span>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number text-gradient">20+</span>
-						<span class="stat-label">Projects Completed</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Skills Section -->
 	<section id="skills" class="skills">
 		<div class="container">
 			<h2 class="section-title reveal">Tech <span class="text-gradient">Stack</span></h2>
 			
-			{(skillCategories as SkillCategory[]).map((category, index) => (
-				<div class="skill-category reveal delay-100">
-					<h3 class="skill-category-title">{category.title}</h3>
-					<div class="skill-grid">
-						{category.skills.map(skill => (
-							<SkillLogo name={skill.name} icon={skill.icon} />
-						))}
-					</div>
-				</div>
-			))}
-		</div>
-	</section>
-
-	<!-- Experience Section (New) -->
-	<section id="experience" class="experience">
-		<div class="container">
-			<h2 class="section-title reveal">Experience</h2>
-			<h3 class="experience-category-title reveal delay-100">Work Experience</h3>
-			<div class="timeline reveal delay-100">
-				<div class="timeline-item">
-					<div class="timeline-date">Jul 2024 - Present</div>
-					<div class="timeline-content">
-						<h3>Software Engineer (Freelance)</h3>
-						<h4>Cont Solutions Indonesia - Sleman, Yogyakarta</h4>
-						<p>Technology and creative media company specializing in web and application development.</p>
-						<ul class="timeline-list">
-							<li>Contributed as an <strong>Android Developer</strong> using Kotlin (Distance sensor integration for real-time monitoring).</li>
-							<li>Worked as a <strong>Backend Developer</strong> using Express.js, building RESTful APIs and server-side logic.</li>
-							<li>Role as <strong>Frontend Developer</strong> using React.js for responsive UI and backend integration.</li>
-						</ul>
-					</div>
-				</div>
-				<div class="timeline-item">
-					<div class="timeline-date">Feb 2024 - Jun 2024</div>
-					<div class="timeline-content">
-						<h3>Android Developer</h3>
-						<h4>Bangkit Academy - Indonesia</h4>
-						<p>Career readiness program supported by Google, GoTo, Tokopedia, and Traveloka.</p>
-						<ul class="timeline-list">
-							<li>Developed "BacaLagi", an Android app for selling used books (Capstone Project).</li>
-							<li>Built using <strong>Kotlin</strong>, XML, Firebase, and Retrofit.</li>
-							<li>Integrated <strong>TensorFlow Lite</strong> (TFLite) model for book price prediction based on cover images.</li>
-						</ul>
-					</div>
-				</div>
+			<div class="skill-grid reveal delay-100">
+				{skills.map(skill => (
+					<SkillLogo name={skill.name} icon={skill.icon} />
+				))}
 			</div>
-
-			<h3 class="experience-category-title reveal delay-200" style="margin-top: 3rem;">Organizational Experience</h3>
-			<div class="timeline reveal delay-200">
-				<!-- Organizational Experience -->
-				<div class="timeline-item">
-					<div class="timeline-date">Jun 2023 - Sep 2024</div>
-					<div class="timeline-content">
-						<h3>Chairman</h3>
-						<h4>Information Technology Club - UPN "Veteran" Yogyakarta</h4>
-						<p>Led a study group focused on developing human resources in informatics.</p>
-						<ul class="timeline-list">
-							<li>Coordinated 4 divisions: Web, Mobile, UI/UX, and PM with 50 active members.</li>
-							<li>Facilitated weekly training sessions based on tailored curricula.</li>
-							<li>Led execution of internal projects and collaborative competitions.</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="timeline-item">
-					<div class="timeline-date">Feb 2024 - Feb 2025</div>
-					<div class="timeline-content">
-						<h3>Head of Dept. Advokasi & Kesejahteraan</h3>
-						<h4>Himpunan Mahasiswa Program Studi Informatika - UPN "Veteran" Yogyakarta</h4>
-						<ul class="timeline-list">
-							<li>Solved student issues related to tuition and academics through policy coordination.</li>
-							<li>Initiated a student feedback system to identify and resolve recurring academic issues.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-<style>
-	/* Skill Categories */
-	.skill-category {
-		margin-bottom: 3rem;
-	}
-	.skill-category-title {
-		text-align: center;
-		font-size: 1.25rem;
-		color: var(--text-muted);
-		margin-bottom: 1.5rem;
-		font-weight: 500;
-	}
-
-/* Additional local styles for the list */
-.timeline-list {
-	margin-top: 0.5rem;
-	padding-left: 1.2rem;
-	color: var(--text-muted);
-	font-size: 0.95rem;
-}
-.timeline-list li {
-	margin-bottom: 0.25rem;
-}
-</style>
 		</div>
 	</section>
 
@@ -209,10 +86,34 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 	<!-- Contact Section -->
 	<section id="contact" class="contact">
 		<div class="container reveal">
-			<div class="contact-box">
-				<h2>Let's Work Together</h2>
-				<p>Have a project in mind? I'm always open to discussing new opportunities.</p>
-				<a href="mailto:sevagiantama@example.com" class="btn btn-primary">Say Hello</a>
+            <h2 class="section-title">Reach <span class="text-gradient">Me</span></h2>
+			<div class="contact-grid">
+                <!-- LinkedIn -->
+				<a href="https://www.linkedin.com/in/seva-farel/" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                         <span class="icon" style="background-image: url('https://api.iconify.design/simple-icons:linkedin.svg?color=%23ffffff');"></span>
+                    </div>
+					<h3>LinkedIn</h3>
+					<p>Connect professionally</p>
+				</a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Tenshi-X" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <span class="icon" style="background-image: url('https://api.iconify.design/simple-icons:github.svg?color=%23ffffff');"></span>
+                    </div>
+					<h3>GitHub</h3>
+					<p>Check my code</p>
+				</a>
+
+                <!-- Email -->
+                <a href="mailto:sevafarel17@gmail.com" class="contact-card">
+                    <div class="icon-box">
+                        <span class="icon" style="background-image: url('https://api.iconify.design/material-symbols:mail.svg?color=%23ffffff');"></span>
+                    </div>
+					<h3>Email</h3>
+					<p>sevafarel17@gmail.com</p>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -322,6 +223,16 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 		font-weight: 500;
 		margin-bottom: 0.5rem;
 	}
+
+    .timeline-list {
+        margin-top: 0.5rem;
+        padding-left: 1.2rem;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+    .timeline-list li {
+        margin-bottom: 0.25rem;
+    }
 	
 	/* Contact Box */
 	.contact-box {
@@ -339,6 +250,30 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 		margin-left: 1rem; /* Align with timeline border */
 		font-weight: 600;
 	}
+
+
+    /* Skill Grid Overlay */
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 4rem 2rem;
+        justify-items: center;
+    }
+    
+    @media (max-width: 968px) {
+        .skill-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .skill-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
 	
 	/* Responsive Adjustments */
 	@media (max-width: 968px) {
@@ -365,4 +300,64 @@ const mobileProjects = projects.filter(p => p.category === 'Mobile');
 			font-size: 2rem;
 		}
 	}
+
+    /* Contact Grid */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .contact-card {
+        background: var(--bg-card);
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border-light);
+        text-align: center;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-primary);
+    }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .icon {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .contact-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .contact-card p {
+        color: var(--text-muted);
+        margin: 0;
+        font-size: 0.9rem;
+    }
 </style>

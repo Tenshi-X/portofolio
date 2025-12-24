@@ -8,65 +8,51 @@ interface Props {
 }
 const { name, icon } = Astro.props;
 ---
-<div class="tech-card">
-    <div class="icon-wrapper">
-        <Icon name={icon} class="tech-icon" />
-    </div>
+<div class="tech-item">
+    <Icon name={icon} class="tech-icon" />
     <p>{name}</p>
 </div>
 
 <style>
-    .tech-card {
+    .tech-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.75rem;
-        padding: 1.5rem;
-        background: var(--bg-card);
-        border: 1px solid var(--border-light);
-        border-radius: 16px;
-        transition: all 0.3s ease;
-        width: 100%;
-        aspect-ratio: 1; /* Square cards */
-        justify-content: center;
-    }
-    
-    .tech-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(59, 130, 246, 0.3);
-        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
-    }
-    
-    .icon-wrapper {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        padding: 0.5rem;
         border-radius: 12px;
+    }
+    
+    .tech-item:hover {
+        transform: translateY(-5px) scale(1.05);
         background: rgba(255, 255, 255, 0.03);
-        margin-bottom: 0.5rem;
     }
     
     .tech-icon {
-        width: 28px;
-        height: 28px;
+        width: 48px;
+        height: 48px;
         color: var(--text-main);
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
     }
     
-    .tech-card:hover .tech-icon {
+    .tech-item:hover .tech-icon {
         color: var(--accent-primary);
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+        transform: scale(1.1);
     }
     
     p {
         margin: 0;
         font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: var(--text-muted);
+        text-align: center;
+        transition: color 0.3s ease;
     }
-    .tech-card:hover p {
+
+    .tech-item:hover p {
         color: var(--text-main);
     }
 </style>

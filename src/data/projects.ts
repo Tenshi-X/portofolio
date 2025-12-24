@@ -29,7 +29,7 @@ export const projects = [
     slug: "larismanis-web",
     category: "Web",
     title: "Larismanis",
-    image: "/projects/placeholder.jpg",
+    image: "/projects/larismanis.png",
     tags: ["Next.js", "Supabase"],
     description: `
         <p class="mb-2"><strong>Tools Sakti untuk UMKM naik kelas.</strong> Platform ini menyediakan alat pemasaran berbasis AI:</p>
